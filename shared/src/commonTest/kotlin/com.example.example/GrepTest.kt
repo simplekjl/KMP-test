@@ -10,8 +10,7 @@ class GrepTest {
             "123 abc",
             "abc 123",
             "123 ABC",
-            "ABC 123",
-            "abc 123"
+            "ABC 123"
         )
     }
 
