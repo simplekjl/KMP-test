@@ -35,13 +35,12 @@ jobs:
 
   iosUnitTest:
 
-    runs-on: ubuntu-latest
-
-    env:
-      JAVA_HOME: /opt/java/openjdk
-      GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx2g
+    runs-on: macos-latest
 
     steps:
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_14.2.app
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
