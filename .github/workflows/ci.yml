@@ -30,7 +30,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Run unit tests for Android and shared modules
+      - name: Run unit tests shared modules
         run: ./gradlew test
 
   iosUnitTest:
@@ -54,7 +54,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Run unit tests for Android and shared modules
-        run: ./gradlew iosX64Test
+      - name: Run unit tests
+        run: xcodebuild test -project iosApp/iosApp.xcodeproj -scheme iosApp -destination 'platform=iOS Simulator,name=iPhone 7' -derivedDataPath build ONLY_ACTIVE_ARCH=YES
 
 
