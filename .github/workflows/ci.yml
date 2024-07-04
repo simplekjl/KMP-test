@@ -55,9 +55,6 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run unit tests
-        run: xcodebuild "build" \
-         "-project" "iosWallet.xcodeproj" \
-         "-scheme" "iosWallet" "-configuration" "Release" \
-         "-destination" "platform=iOS Simulator,name=iPhone 15,OS=17.5" test
+        run: xcodebuild "build" "-project" "iosWallet.xcodeproj" "-scheme" "iosWallet" "-configuration" "Release" "-destination" "platform=iOS Simulator,name=iPhone 15,OS=17.5" test
 
 
