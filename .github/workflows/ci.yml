@@ -55,6 +55,9 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run unit tests
-        run: xcodebuild test -project iosApp/iosApp.xcodeproj -scheme iosApp -destination 'platform=iOS Simulator,name=iPhone 7' -derivedDataPath build ONLY_ACTIVE_ARCH=YES
+        run: xcodebuild "build" \
+         "-project" "iosWallet.xcodeproj" \
+         "-scheme" "iosWallet" "-configuration" "Release" \
+         "-destination" "platform=iOS Simulator,name=iPhone 15,OS=17.5" test
 
 
