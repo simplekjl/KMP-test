@@ -61,5 +61,5 @@ jobs:
         uses: UmutSERIFLER/test-ios-application@1.0.4
         with:
         # Project name is an input that will be used for action
-          projectName: ./iosApp/iosApp.xcodeproj
+          projectName: iosApp
           
