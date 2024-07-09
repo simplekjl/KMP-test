@@ -58,8 +58,5 @@ jobs:
           ruby-version: '3.0'
 
       - name: Test without Building iOS Application
-        uses: UmutSERIFLER/test-ios-application@1.0.4
-        with:
-        # Project name is an input that will be used for action
-          projectName: ./iosApp/iosApp
+        run: xcodebuild "build" "-project" "./iosApp/iosApp.xcodeproj" "-scheme" "iosApp" "-configuration" "Release" "-destination" "platform=iOS Simulator,name=iPhone 15,OS=17.5" test ./iosApp/iosApp.xcodeproj
           
