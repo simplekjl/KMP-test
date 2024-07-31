@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization") version "2.0.0"
+    id("co.touchlab.skie") version "0.8.2"
 }
 
 kotlin {
@@ -24,9 +25,8 @@ kotlin {
         }
     }
 
-    val ktorVersion = "2.3.7"
-
     sourceSets {
+
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(libs.kotlinx.datetime)
@@ -41,6 +41,8 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
+
+
         }
         iosMain.dependencies {
             implementation(libs.ktor.ktor.client.darwin)
