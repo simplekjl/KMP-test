@@ -32,7 +32,7 @@ class RocketComponent {
         return "${date.month} ${date.dayOfMonth} ${date.year}"
     }
 
-    private suspend fun launchPhrase(): String =
+    suspend fun launchPhrase(): String =
         try {
             "The last successful launch was on ${getDateOfLastSuccessfulLaunch()}"
         } catch (e: Exception) {
