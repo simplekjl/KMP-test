@@ -13,4 +13,7 @@ class CurrentRuntime(val name: String, rawVersion: String?) {
         val result = rawVersion?.let { versionRegex.find(it) }
         return result?.value ?: "unknown"
     }
+
+
 }
+expect fun determineCurrentRuntime(): CurrentRuntime
