@@ -68,4 +68,10 @@ jobs:
       - name: Job set up
         uses: ./.github/actions/job-set-up
 
-      - run: if [[ $(uname -m) == 'arm64' ]]; then ./gradlew clean iosSimulatorArm64Test -p shared/; else ./gradlew clean iosX64Test -p shared/; fi
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: Test without Building iOS Application
+        run:  xcodebuild "build" "-project" "./iosApp/iosApp.xcodeproj" "-scheme" "iosApp" "-configuration" "Release" "-destination" "platform=iOS Simulator,name=iPhone 15,OS=17.5" test
