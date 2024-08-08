@@ -3,7 +3,6 @@ name: Build
 on:
   workflow_call:
     inputs:
-      # shared modules
       shouldRunKmp:
         required: true
         type: string
