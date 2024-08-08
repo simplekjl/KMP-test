@@ -57,7 +57,7 @@ fun App() {
                 Text(greeting)
                 HorizontalDivider()
             }
-            GreetingView(text = greetings.first())
+            GreetingView(text = greetings.last())
         }
     }
 
